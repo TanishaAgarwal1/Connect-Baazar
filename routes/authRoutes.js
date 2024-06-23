@@ -62,7 +62,7 @@ router.get('/logout',(req,res)=>{
         }
     //logout function hmesha callback function k andr kaam krta h 
 req.session.destroy();
-res.redirect('/home');
+res.redirect('/');
 });
 });
 
