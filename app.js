@@ -8,6 +8,8 @@ const cartRoutes=require('./routes/cart');
 //const reviewRoutes=require('./routes/reviewRoutes')
 const ejsMate=require('ejs-mate');
 const methodOverride=require('method-override');
+const dotenv=require('dotenv');
+dotenv.config();
 //const multer = require('multer');
 
 
@@ -29,7 +31,7 @@ app.use(methodOverride('_method'));
 
 const authRoutes=require('./routes/authRoutes');
 
-mongoose.connect('mongodb://127.0.0.1:27017/shopping-app')//change db
+mongoose.connect(process.env.MONGO_URL)//change db
 .then(()=>{console.log("DB CONNECTED")}) //resolve
 .catch((err)=>{console.log("CONNECTION Error",err)})//rejectm
 
